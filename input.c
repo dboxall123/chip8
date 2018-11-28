@@ -7,6 +7,8 @@ uint8_t scancodes[NUMKEYS] = {
 	0x1d, 0x1b, 0x06, 0x19     // z, x, c, v
 };
 
+bool sound = true;
+
 static void keydown(SDL_KeyboardEvent *);
 static void keyup(SDL_KeyboardEvent *);
 
@@ -29,19 +31,28 @@ void event_loop(void) {
 }
 
 static void keydown(SDL_KeyboardEvent *event) {
-	for (int i=0; i<NUMKEYS; i++) {
-		if (event->keysym.scancode == scancodes[i]) {
-			//printf("%x\n", scancodes[i]);
-			keys[i] = 1;
+	if (event->repeat == 0) {
+		for (int i=0; i<NUMKEYS; i++) {
+			if (event->keysym.scancode == scancodes[i]) {
+				//printf("%x\n", scancodes[i]);
+				keys[i] = 1;
+				break;
+			}
+		}
+		if (event->keysym.scancode == SDL_SCANCODE_F1) {
+			sound = (sound) ? false : true;
 		}
 	}
 }
 
 static void keyup(SDL_KeyboardEvent *event) {
-	for (int i=0; i<NUMKEYS; i++) {
-		if (event->keysym.scancode == scancodes[i]) {
-			//printf("%x\n", scancodes[i]);
-			keys[i] = 0;
+	if (event->repeat == 0) {
+		for (int i=0; i<NUMKEYS; i++) {
+			if (event->keysym.scancode == scancodes[i]) {
+				//printf("%x\n", scancodes[i]);
+				keys[i] = 0;
+				break;
+			}
 		}
 	}
 }
@@ -55,10 +66,10 @@ void delay(void) {
 		--delay_timer; 
 	}
 	if (sound_timer > 0) {
-		if (sound_timer == 1) {
+		if (sound_timer == 1 && sound) {
 			printf("\a");
 		}
 		--sound_timer;
 	}
-	SDL_Delay(1000/60);
+	SDL_Delay(1000/540);
 }
