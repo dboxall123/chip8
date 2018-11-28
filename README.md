@@ -12,7 +12,7 @@ TODO: Implement correct timing (emulation cycle at ~540hz, but sound/delay suppo
       Make my own beep noise instead of printing \a.
       Implement "wait_for_input()" function for opcode 0xFx0A.
       
-Fixed: Score now updating correctly (it wasn't working becuase i accidentally left out a break statement! How embarrassing...)
+FIXED: Score now updating correctly (it wasn't working becuase i accidentally left out a break statement! How embarrassing...)
        Added option to turn off beeping noise (it gets annoying listening to it over and over again when testing!)
       
       
