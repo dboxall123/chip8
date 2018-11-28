@@ -11,6 +11,9 @@ int main(int argc, char *argv[]) {
 	
 	prepare_scr();
 	present_scr();
+	double endMs, startMs;
+	int frame_counter;
+	startMs = SDL_GetTicks();
 	while (app.running) {
 		draw_flag = false;
 		event_loop();
@@ -21,6 +24,13 @@ int main(int argc, char *argv[]) {
 			present_scr();
 		}
 		delay();
+		counter++;
+		endMs = SDL_GetTicks();
+		if (endMs - startMs >= 1000) {
+			printf("%d\n", frame_counter);
+			frame_counter = 0;
+			startMs = SDL_GetTicks();
+		}
 		//SDL_Delay(1000/60); 
 	}
 	return 0;
