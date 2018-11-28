@@ -15,8 +15,6 @@ void emulate_cycle(void) {
 	uint8_t kk = instr & 0xff;
 	// 12 bit memory address, 3 rightmost hex digits
 	uint16_t addr = instr & 0xfff;
-	//printf("%x\n", instr);
-	//printf("%x\n", hb);
 	
 	switch (hb) {
 		case 0x0: {
@@ -139,6 +137,10 @@ void emulate_cycle(void) {
 					reg[x] <<= 1;
 					break;
 				}
+				default: {
+					printf("Warning, unimplemented instruction %.4x", instr);
+					break;
+				}
 			}// end switch (n)
 			break;
 		}
@@ -168,6 +170,7 @@ void emulate_cycle(void) {
 			break;
 		}
 		case 0xd: {
+			// fill up gfx array, which will be used to draw the relevant pixels to the screen
 			draw_flag = 1;
 			fill_gfx(n, reg[x], reg[y], I_reg);
 			break;
@@ -246,7 +249,7 @@ void emulate_cycle(void) {
 			break;
 		}
 		default: {
-			printf("Unimplemented\n");
+			printf("Unimplemented instruction %.4x\n", instr);
 			break;
 		}
 	}// end main switch 
