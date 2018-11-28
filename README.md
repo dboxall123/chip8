@@ -8,9 +8,14 @@ Simply compile with make, and then run "emu <filename.ch8>".
 NOTE: This is my first emulator, and also my first project using SDL, so the code probably isn't quite as good as it could be. That said, this is a work in progress, and I still have a number of things that i want to do.
         
 TODO: Implement correct timing (emulation cycle at ~540hz, but sound/delay supposed to be ~60hz?!?!?
+
       Update to use super-chip 48 instructions 
+      
       Make my own beep noise instead of printing \a.
+      
       Implement "wait_for_input()" function for opcode 0xFx0A.
+      
+      Sprites are supposed to "wrap" around when they go out of bounds of the screen, need to work this out.
       
 FIXED: Score now updating correctly (it wasn't working becuase i accidentally left out a break statement! How embarrassing...)
        Added option to turn off beeping noise (it gets annoying listening to it over and over again when testing!)
