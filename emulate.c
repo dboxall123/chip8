@@ -227,6 +227,7 @@ void emulate_cycle(void) {
 					memory[I_reg]      = reg[x] / 100;
 					memory[I_reg + 1]  = (reg[x] / 10) % 10;
 					memory[I_reg + 2]  = (reg[x] % 100) % 10;
+					break;
 				}
 				case 0x55: {
 					// store V0 through Vx in memory 
