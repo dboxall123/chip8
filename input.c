@@ -60,5 +60,5 @@ void delay(void) {
 		}
 		--sound_timer;
 	}
-	SDL_Delay(1);
+	SDL_Delay(1000/60);
 }
