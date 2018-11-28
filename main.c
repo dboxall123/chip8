@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 		delay();
 		counter++;
 		endMs = SDL_GetTicks();
-		if (endMs - startMs >= 1000) {
+		if ((endMs - startMs) >= 1000) {
 			printf("%d\n", frame_counter);
 			frame_counter = 0;
 			startMs = SDL_GetTicks();
