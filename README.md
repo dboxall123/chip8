@@ -12,7 +12,8 @@ ISSUES: Score in games like pong not updating (read somewhere this is due to inc
         
 TODO: Solve above issues.
       Update to use super-chip 48 instructions 
-      Make my own beep noise instead of printing \a
+      Make my own beep noise instead of printing \a.
+      Implement "wait_for_input()" function for opcode 0xFx0A.
       
       
       
