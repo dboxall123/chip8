@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project 
-OBJS = main.c init.c draw.c emulate2.c input.c
+OBJS = main.c init.c draw.c emulate.c input.c
 #CC specifies which compiler we're using 
 CC = gcc 
 #INCLUDE_PATHS specifies the additional include paths we'll need 
