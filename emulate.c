@@ -15,8 +15,7 @@ void emulate_cycle(void) {
 	uint8_t kk = instr & 0xff;
 	// 12 bit memory address, 3 rightmost hex digits
 	uint16_t addr = instr & 0xfff;
-	//printf("%x\n", instr);
-	//printf("%x\n", hb);
+	
 	
 	switch (hb) {
 		case 0x0: {
