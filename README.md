@@ -24,6 +24,8 @@ FIXED:
        Score now updating correctly (it wasn't working becuase i accidentally left out a break statement! How embarrassing...)
        
        Added option to turn off beeping noise (it gets annoying listening to it over and over again when testing!)
+       
+       Implemented opcode Fx0A (stop execution until keypress)
       
       
       
