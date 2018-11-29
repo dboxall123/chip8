@@ -58,7 +58,19 @@ static void keyup(SDL_KeyboardEvent *event) {
 }
 
 uint8_t wait_for_input(void) {
-	;
+	SDL_Event event;
+	uint8_t key = 0;
+	while (!key) {
+		keydown(&event.key);
+		for (int i=0; i<16; i++) {
+			if (keys[i]) {
+				key = keys[i];
+				break;
+			}
+		}
+	}
+	return key;
+	
 }
 
 void delay(void) {
