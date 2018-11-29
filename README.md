@@ -14,9 +14,7 @@ TODO:
       Update to use super-chip 48 instructions 
       
       Make my own beep noise instead of printing \a.
-      
-      Implement "wait_for_input()" function for opcode 0xFx0A.
-      
+            
       Sprites are supposed to "wrap" around when they go out of bounds of the screen, need to work this out.
       
 FIXED: 
